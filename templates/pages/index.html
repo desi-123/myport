@@ -1,0 +1,227 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block content %}
+<section class="py-4" id="about">
+  <div class="container">
+    <div class="row">
+      {% if about %} 
+      {% for abt in about %}
+      <h4 class="text-secondary">
+        <!-- Alerts -->
+        {% include 'partials/_alerts.html' %}
+      </h4>
+      <div class="col-md-8">
+        <h4 class="text-center text-white bg-primary">{{abt.title}}</h4>
+        <p class="lead text-center text-white bg-primary">{{ abt.subtitle }}</p>
+        <h5 class="mt-4 bg-primary text-white p-3">{{ abt.description }}</h5>
+      </div>
+      <div class="col-md-4">
+        <div class="card bg-primary">
+          <img
+            class="card-img-top bg-white"
+            src="{{ abt.photo.url }}"
+            alt="profile photo"
+          />
+          <div class="card-body">
+            <h5 class="text-white">Name: {{ abt.name }}</h5>
+            <h5 class="text-white">Phone: {{ abt.phone }}</h5>
+            <h5 class="text-white">E-mail: {{ abt.email }}</h5>
+          </div>
+        </div>
+      </div>
+      {% endfor %} 
+      {% else %}
+      <div class="col-md-12">
+        <p>No About content Available</p>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<!-- Resume -->
+<section id="resume" class="bg-primary text-white text-center">
+  {% if resumes %} 
+  {% for resume in resumes %}
+  <h2 class="display-4">{{resume.title}}</h2>
+  <h4>{{ resume.description }}</h4>
+  <hr />
+  <a href="{{ resume.resume }}" class="btn btn-warning text-white btn-lg mb-3"
+    >Click to See My Resume
+  </a>
+  {% endfor %} 
+  {% else %}
+  <div class="col-md-12">
+    <p>No Resume Available</p>
+  </div>
+  {% endif %}
+</section>
+
+<section id="scrollspySkill" class="py-5">
+  <div class="container">
+    <h3 class="text-center mb-3 text-primary">My Skills</h3>
+    <hr />
+    <div class="row">
+      {% if skills %} 
+      {% for skill in skills %}
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card listing-preview">
+          <h2>
+            <span class="ml-5"> {{skill.skill_1}} </span>
+          </h2>
+          <div class="card-body">
+            <div class="row text-primary">
+              <div class="col-6">{{ skill.skill_1_1 }}</div>
+              <div class="col-6">{{ skill.skill_1_2 }}</div>
+              <div class="col-6">{{ skill.skill_1_3 }}</div>
+              <div class="col-6">{{ skill.skill_1_4 }}</div>
+              <div class="col-6">{{ skill.skill_1_5 }}</div>
+              <div class="col-6">{{ skill.skill_1_6 }}</div>
+              <div class="col-6">{{ skill.skill_1_7 }}</div>
+              <div class="col-6">{{ skill.skill_1_8 }}</div>
+              <div class="col-6">{{ skill.skill_1_9 }}</div>
+              <div class="col-6">{{ skill.skill_1_10 }}</div>
+              <div class="col-6">{{ skill.skill_1_11 }}</div>
+              <div class="col-6">{{ skill.skill_1_12 }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %} 
+      {% else %}
+      <div class="col-md-12">
+        <p>No Skills Content Available</p>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<section id="listings" class="py-5">
+  <div class="container">
+    <h3 class="text-center mb-3 text-primary">Some of My Projects</h3>
+    <hr />
+    <div class="row">
+      {% if projects %} 
+      {% for project in projects %}
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card listing-preview">
+          <img class="card-img-top" src="{{ project.photo.url}}" alt="" />
+          <div class="card-body">
+            <div class="listing-heading text-center">
+              <h4 class="text-primary">{{ project.title }}</h4>
+              <p>
+                <strong> {{ project.skills_used }} </strong>
+              </p>
+            </div>
+            <hr />
+            <div class="row py-2 text-secondary">
+              <div class="col-12">
+                <p>{{ project.description }}</p>
+              </div>
+            </div>
+            <hr />
+            <a href="{{ project.url_live }}" class="btn btn-primary btn-block"
+              ><i class="fa fa-eye mr-1"></i>See Live</a
+            >
+            <a
+              href="{{ project.source_code }}"
+              class="btn btn-primary btn-block"
+              ><i class="fab fa-github mr-1"></i>Source Code</a
+            >
+          </div>
+        </div>
+      </div>
+      {% endfor %} 
+      {% else %}
+      <div class="col-md-12">
+        <p>No projects Content Available</p>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<div class="container bg-dark text-white" id="contact">
+  <div class="row row-content align-items-center">
+      <h4 class="text-secondary">
+      <!-- Alerts -->
+      {% include 'partials/_alerts.html' %}
+    </h4>
+    <div class="col-sm-4">
+      <h2 class="underline">My Address</h2>
+      <address>
+        281 Topeka <br />
+        Irvine Californian, CA 92604 <br />
+        U.S.A.
+      </address>
+    </div>
+    <div class="col">
+      <h2>Contact Info</h2>
+      <a href="#" class="btn btn-link">
+        <i class="fa fa-phone text-white"></i></a
+      >(669) 261-4348<br />
+      <a href="#" class="btn btn-link">
+        <i class="fa fa-envelope text-white"></i> </a
+      >desie21mn@gmail.com
+    </div>
+  </div>
+  <div class="row row-content">
+    <div class="col-12">
+      <h2>Get In Touch</h2>
+      <hr />
+      <form action="#contact" method="POST">
+        {% csrf_token %} 
+        {% if user.is_authenticated %}
+        <input type="hidden" name="user_id" value="{{ user.id }}" />
+        {% else %}
+        <input type="hidden" name="user_id" value="0" />
+        {% endif %}
+        <div class="form-group">
+          <label for="name" class="col-form-label">Name:</label>
+          <input
+            type="text"
+            name="name"
+            class="form-control"
+            placeholder="Full Name"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="email" class="col-form-label">Email:</label>
+          <input
+            type="email"
+            name="email"
+            class="form-control"
+            placeholder="Email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="phone" class="col-form-label">Phone:</label>
+          <input
+            type="text"
+            name="phone"
+            class="form-control"
+            placeholder="Phone"
+          />
+        </div>
+        <div class="form-group">
+          <label for="message" class="col-form-label">Message:</label>
+          <textarea
+            name="message"
+            class="form-control"
+            placeholder="Write a message here..."
+          ></textarea>
+        </div>
+        <hr />
+        <input
+          type="submit"
+          value="Send"
+          class="btn btn-block btn-primary mb-5"
+        />
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

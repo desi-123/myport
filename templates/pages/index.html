@@ -1,11 +1,8 @@
-{% extends 'base.html' %} 
-{% load static %} 
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% block content %}
 <section class="py-4" id="about">
   <div class="container">
     <div class="row">
-      {% if about %} 
-      {% for abt in about %}
+      {% if about %} {% for abt in about %}
       <h4 class="text-secondary">
         <!-- Alerts -->
         {% include 'partials/_alerts.html' %}
@@ -29,8 +26,7 @@
           </div>
         </div>
       </div>
-      {% endfor %} 
-      {% else %}
+      {% endfor %} {% else %}
       <div class="col-md-12">
         <p>No About content Available</p>
       </div>
@@ -41,16 +37,14 @@
 
 <!-- Resume -->
 <section id="resume" class="bg-primary text-white text-center">
-  {% if resumes %} 
-  {% for resume in resumes %}
+  {% if resumes %} {% for resume in resumes %}
   <h2 class="display-4">{{resume.title}}</h2>
   <h4>{{ resume.description }}</h4>
   <hr />
   <a href="{{ resume.resume }}" class="btn btn-warning text-white btn-lg mb-3"
-    >Click to See My Resume
+    >View My Resume
   </a>
-  {% endfor %} 
-  {% else %}
+  {% endfor %} {% else %}
   <div class="col-md-12">
     <p>No Resume Available</p>
   </div>
@@ -62,8 +56,7 @@
     <h3 class="text-center mb-3 text-primary">My Skills</h3>
     <hr />
     <div class="row">
-      {% if skills %} 
-      {% for skill in skills %}
+      {% if skills %} {% for skill in skills %}
       <div class="col-md-6 col-lg-4 mb-4">
         <div class="card listing-preview">
           <h2>
@@ -87,8 +80,7 @@
           </div>
         </div>
       </div>
-      {% endfor %} 
-      {% else %}
+      {% endfor %} {% else %}
       <div class="col-md-12">
         <p>No Skills Content Available</p>
       </div>
@@ -102,8 +94,7 @@
     <h3 class="text-center mb-3 text-primary">Some of My Projects</h3>
     <hr />
     <div class="row">
-      {% if projects %} 
-      {% for project in projects %}
+      {% if projects %} {% for project in projects %}
       <div class="col-md-6 col-lg-4 mb-4">
         <div class="card listing-preview">
           <img class="card-img-top" src="{{ project.photo.url}}" alt="" />
@@ -132,8 +123,7 @@
           </div>
         </div>
       </div>
-      {% endfor %} 
-      {% else %}
+      {% endfor %} {% else %}
       <div class="col-md-12">
         <p>No projects Content Available</p>
       </div>
@@ -144,7 +134,7 @@
 
 <div class="container bg-dark text-white" id="contact">
   <div class="row row-content align-items-center">
-      <h4 class="text-secondary">
+    <h4 class="text-secondary">
       <!-- Alerts -->
       {% include 'partials/_alerts.html' %}
     </h4>
@@ -171,8 +161,7 @@
       <h2>Get In Touch</h2>
       <hr />
       <form action="#contact" method="POST">
-        {% csrf_token %} 
-        {% if user.is_authenticated %}
+        {% csrf_token %} {% if user.is_authenticated %}
         <input type="hidden" name="user_id" value="{{ user.id }}" />
         {% else %}
         <input type="hidden" name="user_id" value="0" />

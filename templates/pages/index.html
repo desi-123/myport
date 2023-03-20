@@ -36,22 +36,24 @@
 </section>
 
 <!-- Resume -->
-<section id="resume" class="bg-primary text-white text-center">
-  {% if resumes %} {% for resume in resumes %}
-  <h2 class="display-4">{{resume.title}}</h2>
-  <h4>{{ resume.description }}</h4>
-  <hr />
-  <a href="{{ resume.resume }}" class="btn btn-warning text-white btn-lg mb-3"
-    >View My Resume
-  </a>
-  {% endfor %} {% else %}
-  <div class="col-md-12">
-    <p>No Resume Available</p>
+<section class="bg-primary text-white text-center py-2">
+  <div class="container">
+    {% if resumes %} {% for resume in resumes %}
+    <h2>{{resume.title}}</h2>
+    <h6>{{ resume.description }}</h6>
+    <hr />
+    <a href="{{ resume.resume }}" class="btn btn-outline-info text-white btn-lg mb-3"
+      >View Resume
+    </a>
+    {% endfor %} {% else %}
+    <div class="col-md-12">
+      <p>No Resume Available</p>
+    </div>
+    {% endif %}
   </div>
-  {% endif %}
 </section>
 
-<section id="scrollspySkill" class="py-5">
+<section id="skill" class="py-5">
   <div class="container">
     <h3 class="text-center mb-3 text-primary">My Skills</h3>
     <hr />
@@ -132,12 +134,8 @@
   </div>
 </section>
 
-<div class="container bg-dark text-white" id="contact">
+<div class="container bg-primary text-white mb-5" id="contact">
   <div class="row row-content align-items-center">
-    <h4 class="text-secondary">
-      <!-- Alerts -->
-      {% include 'partials/_alerts.html' %}
-    </h4>
     <div class="col-sm-4">
       <h2 class="underline">My Address</h2>
       <address>
@@ -198,16 +196,17 @@
         <div class="form-group">
           <label for="message" class="col-form-label">Message:</label>
           <textarea
+          rows="7"
             name="message"
             class="form-control"
-            placeholder="Write a message here..."
+            placeholder="Message me"
           ></textarea>
         </div>
         <hr />
         <input
           type="submit"
           value="Send"
-          class="btn btn-block btn-primary mb-5"
+          class="btn btn-block btn-outline-info mb-5"
         />
       </form>
     </div>

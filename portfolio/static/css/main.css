@@ -1,3 +1,7 @@
+#login {
+  min-height: 80vh;
+}
+
 .btn-secondary {
   color: #fff !important; }
 
@@ -14,11 +18,9 @@ img {
 .social a {
   margin-right: 0.4rem; }
 
-#resume {
-  padding: 3rem 0; } 
-
 @media (max-width: 768px) {
   #top-bar {
     text-align: center; }
     #top-bar .social {
       text-align: center !important; } }
+

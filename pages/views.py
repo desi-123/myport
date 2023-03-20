@@ -1,17 +1,15 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .models import About, Skill, Project, Contact, Resume
+from .models import About, Skill, Project, Contact
 
 def index(request):
  about = About.objects.all()
  skills = Skill.objects.all()
  projects = Project.objects.all()
- resumes = Resume.objects.all()
  context = {
   'about': about,
   'skills': skills,
   'projects': projects,
-  'resumes': resumes,
  }
 
  # Contact

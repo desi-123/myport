@@ -2,13 +2,14 @@ from django.db import models
 from datetime import datetime
 
 class About(models.Model):
- title = models.CharField(max_length=100)
- subtitle = models.CharField(max_length=200)
+ title = models.CharField(max_length=100, blank=True)
+ subtitle = models.CharField(max_length=200, blank=True)
  description = models.TextField(blank=True)
- name = models.CharField(max_length=100)
- email = models.CharField(max_length=100)
- phone = models.CharField(max_length=100)
- photo = models.ImageField(upload_to='photos/%Y/%m/%d/')
+ resume = models.CharField(max_length=200, blank=True)
+ resume_text = models.CharField(max_length=200, blank=True)
+ photo = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
+ photo_background = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
+
  def __str__(self):
   return self.title
 
@@ -52,12 +53,6 @@ class Contact(models.Model):
  def __str__(self):
   return self.name
 
-class Resume(models.Model):
- title = models.CharField(max_length=200)
- resume = models.CharField(max_length=200)
- description = models.TextField(blank=True)
- def __str__(self):
-  return self.title
 
 
 

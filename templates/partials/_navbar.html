@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
+<nav id="nav-black" class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
   <div class="container">
     <a class="navbar-brand" href="{% url 'index' %}">
       <h2 class="font-italic">MDW</h2>
@@ -19,8 +19,8 @@
         <li class="nav-item mr-3">
           <a class="nav-link" href="#about">About</a>
         </li>
-        <li class="nav-item mr-3">
-          <a class="nav-link" href="#contact">Contact</a>
+        <li>
+          <a class="nav-link" href="#contact">Get In Touch</a>
         </li>
       </ul>
 
@@ -30,7 +30,7 @@
         <li class="nave-item text-white">
           <a href="javascript: {document.getElementById('logout').submit()}">
             <i class="fas fa-sign-out-alt text-warning"></i
-            ><span class="text-warning">Logout</span>
+            ><span class="text-warning">Sign out</span>
           </a>
           <form action="{% url 'logout' %}" method="POST" id="logout">
             {% csrf_token %}
@@ -38,13 +38,19 @@
           </form>
         </li>
         {% else %}
-        <li class="nav-item mr-3">
-          <a class="nav-link" href="{% url 'login' %}">
-            <i class="fas fa-sign-in-alt"></i>
-
-            Sign In</a
+          <li 
+            {% if 'login' in request.path %}
+            class="nav-item active mr-3"
+            {% else %}
+            class="nav-item mr-3"
+            {% endif %}
           >
-        </li>
+            <a class="nav-link" href="{% url 'login' %}">
+              <i class="fas fa-sign-in-alt"></i>
+
+              Sign in</a
+            >
+          </li>
         {% endif %}
       </ul>
     </div>

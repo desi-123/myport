@@ -1,10 +1,24 @@
+body {
+  background-color: #101d2c;
+}
 #login {
   min-height: 80vh;
 }
+.card {
+  box-shadow: 0 3rem 3rem rgba(2, 3, 5, .3);
+}
+#dev {
+  background: #0c0c0c;
+  color: #00B7FF;
+  text-shadow: 0 3rem 3rem rgba(2, 3, 5, .3);
+}
 
-.btn-secondary {
-  color: #fff !important; }
-
+#contact {
+  box-shadow: 0 3rem 3rem rgba(2, 3, 5, .3);
+}
+.projects {
+  box-shadow: 0 3rem 3rem rgba(2, 3, 5, .3);
+}
 img {
   width: 100%; }
 
@@ -24,3 +38,29 @@ img {
     #top-bar .social {
       text-align: center !important; } }
 
+
+/* about image background */
+
+#about-bg {
+  background: url(../../../media/photos/2023/03/20/aboutme.jpg) top center no-repeat fixed;
+  background-size: cover;
+  padding: 6rem 0;
+}
+
+#about-bg::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  background: rgba(38, 79, 173, 0.8);
+
+}
+
+.about-inner {
+  color: #fff;
+  background: rgba(9, 13, 24, 0.5);
+  border-radius: 5%;
+}
+
+.card-img-profile {
+  border-radius: 50%;
+}

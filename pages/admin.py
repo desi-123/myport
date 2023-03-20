@@ -1,12 +1,12 @@
 from django.contrib import admin
-from .models import About, Skill, Project, Contact, Resume
+from .models import About, Skill, Project, Contact
 
 # About Admin
 class AboutAdmin(admin.ModelAdmin):
- list_display = ('id', 'title', 'subtitle', 'description', 'name', 'email', 'photo', 'phone')
+ list_display = ('id', 'title', 'subtitle', 'description', 'photo', 'resume', 'photo_background', 'resume_text')
  list_display_links = ('id', 'title', 'subtitle')
- list_filter = ('name', 'subtitle')
- search_fields = ('title', 'subtitle', 'description', 'name', 'email', 'photo', 'phone')
+ list_filter = ('photo', 'subtitle')
+ search_fields = ('title', 'subtitle', 'description', 'photo', 'resume', 'photo', 'photo_background', 'resume_text')
  list_per_page = 10
 
 admin.site.register(About, AboutAdmin)
@@ -41,13 +41,4 @@ class ContactAdmin(admin.ModelAdmin):
 
 admin.site.register(Contact, ContactAdmin)
 
-# Resume Admin
-class ResumeAdmin(admin.ModelAdmin):
- list_display = ('id', 'title', 'description', 'resume')
- list_display_links = ('id', 'title')
- list_filter = ('id', 'title')
- search_fields = ('title', 'resume', 'description')
- list_per_page = 10
-
-admin.site.register(Resume, ResumeAdmin)
 

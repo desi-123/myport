@@ -3,10 +3,10 @@ from .models import About, Skill, Project, Contact
 
 # About Admin
 class AboutAdmin(admin.ModelAdmin):
- list_display = ('id', 'title', 'subtitle', 'description', 'photo', 'resume', 'photo_background', 'resume_text')
+ list_display = ('id', 'title', 'subtitle', 'description', 'photo', 'resume', 'resume_text')
  list_display_links = ('id', 'title', 'subtitle')
  list_filter = ('photo', 'subtitle')
- search_fields = ('title', 'subtitle', 'description', 'photo', 'resume', 'photo', 'photo_background', 'resume_text')
+ search_fields = ('title', 'subtitle', 'description', 'photo', 'resume', 'photo', 'resume_text')
  list_per_page = 10
 
 admin.site.register(About, AboutAdmin)

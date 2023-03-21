@@ -42,7 +42,7 @@ img {
 /* about image background */
 
 #about-bg {
-  background: url(../img/background.jpg) top center no-repeat fixed;
+  background: url(../img/about_background.jpg) top center no-repeat fixed;
   background-size: cover;
   padding: 6rem 0;
 }

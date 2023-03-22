@@ -8,7 +8,7 @@
       {% if about %} 
       {% for abt in about %}
       <div class="col-md-8">
-        <h2 class="text-center">{{abt.title}}</h2>
+        <h2 class="text-center mt-4">{{abt.title}}</h2>
         <h3 class="text-center">{{ abt.subtitle }}</h3>
         <p class="lead mt-4">{{ abt.description }}</p>
       </div>
@@ -19,7 +19,7 @@
           src="{{ abt.photo.url }}"
           alt="profile photo"
           />
-          <p class="lead text-center my-4"><a href="{{ abt.resume }}" class="btn btn-outline-info btn-lg mb-3"
+          <p class="lead text-center my-3"><a href="{{ abt.resume }}" class="btn btn-outline-info btn-lg mb-3"
         >{{ abt.resume_text }}
       </a></p>
         </div>

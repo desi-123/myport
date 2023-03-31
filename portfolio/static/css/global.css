@@ -20,7 +20,7 @@ img {
   width: 100%; }
 
 .logo {
-  width: 80px; 
+  width: 70px; 
   border-radius: 50%;
 }
 
@@ -41,9 +41,9 @@ img {
 /* about image background */
 
 #aboutme {
-  background: url(../img/about_bg.JPG) top center no-repeat fixed;
+  background: url(../img/jspy.png) top center no-repeat fixed;
   background-size: cover;
-  padding: 6rem 0;
+  padding: 5rem 0;
 }
 
 #aboutme::before {

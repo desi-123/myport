@@ -1,5 +1,5 @@
 body {
-  background-color: #101d2c;
+  background-color: #101d2c !important;
 }
 #login {
   min-height: 80vh;
@@ -40,13 +40,13 @@ img {
 
 /* about image background */
 
-#about-bg {
+#aboutme {
   background: url(../img/about_bg.JPG) top center no-repeat fixed;
   background-size: cover;
   padding: 6rem 0;
 }
 
-#about-bg::before {
+#aboutme::before {
   content: '';
   position: absolute;
   width: 100%;

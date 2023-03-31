@@ -4,6 +4,8 @@
  <!-- Showcase -->
  <section id="aboutme" class="text-light mb-5">
   <div class="container about-inner">
+    <!-- Alerts -->
+    {% include 'partials/_alerts.html' %}
     <div class="row">
       {% if about %} 
       {% for abt in about %}
@@ -32,9 +34,6 @@
     </div>
   </div>
 </section>
-
-<!-- Alerts -->
-{% include 'partials/_alerts.html' %}
 
 <section id="skill" class="bg-dark py-5">
   <div class="container">

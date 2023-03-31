@@ -41,9 +41,9 @@ img {
 /* about image background */
 
 #aboutme {
-  background: url(../img/jspy.png) top center no-repeat fixed;
+  background: url(../img/about.jpg) top center no-repeat fixed;
   background-size: cover;
-  padding: 5rem 0;
+  padding: 4rem 0;
 }
 
 #aboutme::before {

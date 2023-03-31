@@ -27,7 +27,7 @@ def index(request):
    has_contacted = Contact.objects.all().filter(user_id=user_id)
    if has_contacted:
     messages.error(request, 'You have already messaged to Desalegn Wagaw!')
-    return redirect('index')
+    return render(request, 'pages/index.html', context)
 
   contact.save()
   messages.success(request, 'Your message has been submitted to Desalegn Wagaw!')

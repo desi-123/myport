@@ -14,7 +14,7 @@ body {
 }
 
 .projects {
-  box-shadow: 0 3rem 3rem rgba(2, 3, 5, .3);
+  box-shadow: 0 3rem 3rem rgba(2, 3, 5, .1);
 }
 img {
   width: 100%; }
@@ -41,7 +41,7 @@ img {
 /* about image background */
 
 #aboutme {
-  background: url(../img/jspy.png) top center no-repeat fixed;
+  background: url(../img/mernabt.jpg) top center no-repeat fixed;
   background-size: cover;
   padding: 3rem 0;
 }
